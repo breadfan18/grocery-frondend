@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.dockerfile
+    ports:
+      - "8080:3000"
+    networks:
+      - grocery_network
+    depends_on:
+      - backend
+
+  backend:
+    image: breadfan18/grocery-backend
+    networks:
+      - grocery_network
+    ports:
+      - "8081:3000"
+    volumes:
+      - .:/src/
+
+networks:
+  grocery_network:
+    driver: bridge

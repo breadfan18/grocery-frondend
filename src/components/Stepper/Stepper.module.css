@@ -1,0 +1,6 @@
+.stepper {
+  display: flex;
+  max-width: 5rem;
+  justify-content: space-around;
+  align-items: center;
+}
