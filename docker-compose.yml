@@ -1,26 +1,30 @@
-version: "2"
+version: "3.9"
 
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: frontend.dockerfile
-    ports:
-      - "8080:3000"
-    networks:
-      - grocery_network
-    depends_on:
-      - backend
-
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
   backend:
     image: breadfan18/grocery-backend
-    networks:
-      - grocery_network
     ports:
-      - "8081:3000"
+      - 4001:3000
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo_db:27017
+      DB_NAME: my_db
+      NAME: Swaroop Uprety
     volumes:
       - .:/src/
+  frontend:
+    build: .
+    ports:
+      - 4000:3000
+    depends_on:
+      - mongo_db
+      - backend
 
-networks:
-  grocery_network:
-    driver: bridge
+volumes:
+  mongo_db: {}
