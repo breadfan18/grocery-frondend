@@ -18,12 +18,13 @@ services:
       NAME: Swaroop Uprety
     volumes:
       - .:/src/
+    depends_on:
+      - mongo_db
   frontend:
     build: .
     ports:
       - 4000:3000
     depends_on:
-      - mongo_db
       - backend
 
 volumes:

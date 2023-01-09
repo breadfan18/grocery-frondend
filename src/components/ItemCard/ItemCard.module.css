@@ -1,4 +1,27 @@
 .itemCard {
   border: 2px solid gray;
   margin: 10px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.prices {
+  display: flex;
+}
+
+.itemInfoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prices > p:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+  color: green;
 }
