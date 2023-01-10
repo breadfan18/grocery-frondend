@@ -27,7 +27,7 @@ const ItemCard = ({ item }) => {
       </section>
       <section className={style.checkout}>
         <Stepper />
-        <Button>Add to Cart</Button>
+        <Button variant="success">Add to Cart</Button>
       </section>
     </div>
   );
