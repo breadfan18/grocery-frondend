@@ -2,10 +2,15 @@ import React from "react";
 import Stepper from "../Stepper/Stepper";
 import style from "./ItemCard.module.css";
 import Button from "react-bootstrap/Button";
+import HeartIcon from "../HeartSwitch/HeartIcon";
 
 const ItemCard = ({ item }) => {
   return (
     <div className={style.itemCard}>
+      <section className={style.topSection}>
+        <p className={style.yellowtag}>{item.promotion}</p>
+        <HeartIcon />
+      </section>
       <img src={item.img} alt={item.name} style={{ height: "15rem" }} />
       <section className={style.itemInfoSection}>
         <p style={{ fontSize: "0.7rem", color: "gray" }}>

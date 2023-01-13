@@ -7,6 +7,7 @@
 
 .prices {
   display: flex;
+  font-size: 1.5rem;
 }
 
 .itemInfoSection {
@@ -15,7 +16,8 @@
   align-items: center;
 }
 
-.checkout {
+.checkout,
+.topSection {
   display: flex;
   justify-content: space-between;
 }
@@ -24,4 +26,11 @@
   font-weight: bold;
   margin-right: 10px;
   color: green;
+}
+
+.yellowtag {
+  background-color: rgb(255, 102, 0);
+  color: white;
+  padding: 2px 12px 2px 12px;
+  border-radius: 5px;
 }
