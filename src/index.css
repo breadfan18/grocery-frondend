@@ -1,3 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  margin: 0;
+  font-family: Helvetica;
+  display: grid;
+  /* mobile first - single column */
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 60px auto 30px;
+  grid-template-areas:
+    "hdr"
+    "side"
+    "content"
+    "ftr";
+}
+
+header {
+  grid-area: hdr;
+  background-color: #ff9e7a;
+}
+
+footer {
+  grid-area: ftr;
+  background-color: #b1fcc8;
+}
+
+aside {
+  grid-area: side;
+  background-color: #ffe07a;
+  min-width: 300px;
+}
+
+main {
+  grid-area: content;
+}
+
+header,
+footer,
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .App {
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 50px auto 30px;
+    grid-template-areas:
+      "hdr hdr"
+      "side content"
+      "ftr ftr";
+  }
+}
+
 .itemCardContainer {
   display: flex;
+  flex-wrap: wrap;
 }

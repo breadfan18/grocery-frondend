@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { getAllItems } from "./services/items-service";
 import ItemCard from "./components/ItemCard/ItemCard";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
+import { Navigation } from "./components/Nav/Navigation";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -23,8 +26,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Grocery Items</h1>
-      <div className="itemCardContainer">{itemCards}</div>
+      <Header />
+      <Navigation />
+      <main className="itemCardContainer">{itemCards}</main>
+      <Footer />
     </div>
   );
 }

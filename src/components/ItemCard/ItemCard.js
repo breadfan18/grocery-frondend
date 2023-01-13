@@ -11,7 +11,11 @@ const ItemCard = ({ item }) => {
         <p className={style.yellowtag}>{item.promotion}</p>
         <HeartIcon />
       </section>
-      <img src={item.img} alt={item.name} style={{ height: "15rem" }} />
+      <img
+        src={item.img}
+        alt={item.name}
+        style={{ height: "15rem", width: "15rem" }}
+      />
       <section className={style.itemInfoSection}>
         <p style={{ fontSize: "0.7rem", color: "gray" }}>
           {item.available ? "Available (In Stock)" : "Out of Stock"}

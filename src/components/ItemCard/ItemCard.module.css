@@ -3,6 +3,11 @@
   margin: 10px;
   padding: 1rem;
   border-radius: 10px;
+  max-height: 30rem;
+}
+
+.itemCard > img {
+  align-self: center;
 }
 
 .prices {
