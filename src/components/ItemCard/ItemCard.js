@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Stepper from "../Stepper/Stepper";
 import style from "./ItemCard.module.css";
 import Button from "react-bootstrap/Button";
 import HeartIcon from "../HeartSwitch/HeartIcon";
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, setCart }) => {
+  let [itemQuantity, setItemQuantity] = useState(0);
+
+  const handleIncrement = () => {
+    setItemQuantity(itemQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (itemQuantity > 0) setItemQuantity(itemQuantity - 1);
+  };
+
+  const handleAddToCart = (item, quantity) => {
+    const cartItem = {
+      quantity,
+      ...item,
+    };
+    setCart((prevState) => [...prevState, cartItem]);
+  };
+
   return (
     <div className={style.itemCard}>
       <section className={style.topSection}>
@@ -35,8 +53,17 @@ const ItemCard = ({ item }) => {
         </div>
       </section>
       <section className={style.checkout}>
-        <Stepper />
-        <Button variant="success">Add to Cart</Button>
+        <Stepper
+          itemQuantity={itemQuantity}
+          increment={handleIncrement}
+          decrement={handleDecrement}
+        />
+        <Button
+          variant="success"
+          onClick={() => handleAddToCart(item, itemQuantity)}
+        >
+          Add to Cart
+        </Button>
       </section>
     </div>
   );

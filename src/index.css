@@ -9,28 +9,20 @@
   display: grid;
   /* mobile first - single column */
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 60px auto 30px;
+  grid-template-rows: 50px auto 30px;
   grid-template-areas:
-    "hdr"
-    "side"
+    "nav"
     "content"
     "ftr";
 }
 
-header {
-  grid-area: hdr;
-  background-color: #ff9e7a;
-}
-
 footer {
   grid-area: ftr;
-  background-color: #b1fcc8;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-aside {
-  grid-area: side;
-  background-color: #ffe07a;
-  min-width: 300px;
+.navBar {
+  grid-area: nav;
 }
 
 main {
@@ -43,17 +35,6 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media (min-width: 768px) {
-  .App {
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 50px auto 30px;
-    grid-template-areas:
-      "hdr hdr"
-      "side content"
-      "ftr ftr";
-  }
 }
 
 .itemCardContainer {
