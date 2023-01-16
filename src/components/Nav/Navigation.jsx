@@ -1,11 +1,12 @@
 import React from "react";
 import { Button, Form, NavDropdown, Offcanvas } from "react-bootstrap";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-export const Navigation = () => {
+export const Navigation = (props) => {
   return (
     <div className="navBar">
       <Navbar key="md" bg="light" expand="md" className="mb-3">
@@ -38,6 +39,28 @@ export const Navigation = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <AiOutlineShoppingCart />
+                <p
+                  style={{
+                    backgroundColor: "orange",
+                    color: "white",
+                    borderRadius: "50px",
+                    padding: "5px",
+                    height: "25px",
+                    width: "25px",
+                    textAlign: "center",
+                  }}
+                >
+                  {props.numItemsInCart || 0}
+                </p>
+              </div>
               <Form className="d-flex">
                 <Form.Control
                   type="search"

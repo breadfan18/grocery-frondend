@@ -16,11 +16,13 @@ const ItemCard = ({ item, setCart }) => {
   };
 
   const handleAddToCart = (item, quantity) => {
-    const cartItem = {
-      quantity,
-      ...item,
-    };
-    setCart((prevState) => [...prevState, cartItem]);
+    if (quantity > 0) {
+      const cartItem = {
+        quantity,
+        ...item,
+      };
+      setCart((prevState) => [...prevState, cartItem]);
+    }
   };
 
   return (

@@ -29,14 +29,16 @@ export default function App() {
     return <ItemCard item={item} setCart={setCart} />;
   });
 
-  const cartItems = cart.map((item) => {
+  // The first item in local storage is not getting added to cart Items
+  const cartItems = JSON.parse(localStorage.cart).map((item) => {
     return <Cart item={item} />;
   });
 
   return (
     <div className="App">
-      <Navigation />
+      <Navigation numItemsInCart={cart.length} />
       <main className="itemCardContainer">{itemCards}</main>
+      {/* Need to replace cart items with localStorage */}
       {cartItems}
       <Footer />
     </div>
