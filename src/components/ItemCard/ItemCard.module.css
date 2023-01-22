@@ -3,7 +3,7 @@
   margin: 10px;
   padding: 1rem;
   border-radius: 10px;
-  max-height: 30rem;
+  max-height: 28rem;
 }
 
 .itemCard > img {
@@ -19,6 +19,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.itemInfoSection * {
+  margin: 1px auto 1px auto;
 }
 
 .checkout,

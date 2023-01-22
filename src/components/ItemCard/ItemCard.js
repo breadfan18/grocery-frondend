@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Stepper from "../Stepper/Stepper";
 import style from "./ItemCard.module.css";
 import Button from "react-bootstrap/Button";

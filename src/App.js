@@ -11,10 +11,7 @@ import { Cart } from "./components/Cart/Cart";
 export default function App() {
   const [items, setItems] = useState([]);
   let [cart, setCart] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+  let [displayCart, setDisplayCart] = useState(false);
 
   useEffect(() => {
     getItemData();
@@ -29,17 +26,15 @@ export default function App() {
     return <ItemCard item={item} setCart={setCart} />;
   });
 
-  // The first item in local storage is not getting added to cart Items
-  const cartItems = JSON.parse(localStorage.cart).map((item) => {
-    return <Cart item={item} />;
-  });
-
   return (
     <div className="App">
-      <Navigation numItemsInCart={cart.length} />
+      <Navigation
+        numItemsInCart={cart.length}
+        displayCart={displayCart}
+        setDisplayCart={setDisplayCart}
+      />
       <main className="itemCardContainer">{itemCards}</main>
-      {/* Need to replace cart items with localStorage */}
-      {cartItems}
+      {displayCart && <Cart items={cart} />}
       <Footer />
     </div>
   );

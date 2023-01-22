@@ -1,17 +1,7 @@
 import React from "react";
+import { CartItem } from "./CartItem";
 
-export const Cart = ({ item }) => {
-  return (
-    <div>
-      <p>{item.name}</p>
-      <img
-        src={item.img}
-        alt={item.name}
-        style={{ height: "5rem", width: "5rem" }}
-      />
-      <p>{item.salePrice}</p>
-      <p>{item.quantity}</p>
-      <hr />
-    </div>
-  );
+export const Cart = ({ items }) => {
+  const cartItems = items.map((item) => <CartItem item={item} />);
+  return <div>{cartItems}</div>;
 };
