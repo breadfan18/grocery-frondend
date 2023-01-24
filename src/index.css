@@ -2,17 +2,16 @@
   box-sizing: border-box;
 }
 
-.App {
+/* .App {
   height: 100vh;
   margin: 0;
   font-family: Helvetica;
   display: grid;
-  /* mobile first - single column */
   grid-template-columns: 1fr;
-  grid-template-rows: 50px auto 30px;
+  grid-template-rows: 50px auto auto 30px;
   grid-template-areas:
     "nav"
-    "content"
+    "content" "cart"
     "ftr";
 }
 
@@ -29,13 +28,12 @@ main {
   grid-area: content;
 }
 
-header,
-footer,
-aside {
+.cartSection {
+  grid-area: cart;
+  max-width: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  justify-content: flex-end;
+} */
 
 .itemCardContainer {
   display: flex;

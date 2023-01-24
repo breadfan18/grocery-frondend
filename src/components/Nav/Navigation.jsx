@@ -1,42 +1,16 @@
 import React from "react";
 import { Button, Form, NavDropdown, Offcanvas } from "react-bootstrap";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-export const Navigation = ({ numItemsInCart, setDisplayCart, displayCart }) => {
+export const Navigation = () => {
   return (
     <div className="navBar">
       <Navbar key="md" bg="light" expand="md" className="mb-3">
         <Container fluid>
           <Navbar.Brand href="#">Swaroop's Grocery Store</Navbar.Brand>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-            }}
-            onClick={() => setDisplayCart(!displayCart)}
-          >
-            <AiOutlineShoppingCart />
-            <p
-              style={{
-                backgroundColor: "rgb(255, 102, 0)",
-                color: "white",
-                borderRadius: "50px",
-                padding: "5px",
-                height: "25px",
-                width: "25px",
-                textAlign: "center",
-                fontSize: "11px",
-              }}
-            >
-              {numItemsInCart || 0}
-            </p>
-          </div>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$"md"`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-$"md"`}

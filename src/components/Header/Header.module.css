@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.topRight {
+  display: flex;
+  justify-content: space-evenly;
+  min-width: 8rem;
+}
+
+.cartSection {
+  display: flex;
+  cursor: pointer;
+}
+
+.cartCounter {
+  background-color: rgb(255, 102, 0);
+  color: white;
+  border-radius: 50px;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  font-size: 8px;
+}

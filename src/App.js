@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Footer } from "./components/Footer/Footer";
 import { Navigation } from "./components/Nav/Navigation";
 import { Cart } from "./components/Cart/Cart";
+import { Header } from "./components/Header/Header";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -28,14 +29,25 @@ export default function App() {
 
   return (
     <div className="App">
-      <Navigation
+      <Header
         numItemsInCart={cart.length}
         displayCart={displayCart}
         setDisplayCart={setDisplayCart}
       />
+      {/* <Navigation
+        numItemsInCart={cart.length}
+        displayCart={displayCart}
+        setDisplayCart={setDisplayCart}
+      /> */}
       <main className="itemCardContainer">{itemCards}</main>
-      {displayCart && <Cart items={cart} />}
+      <div className="cartSection">{displayCart && <Cart items={cart} />}</div>
       <Footer />
     </div>
   );
 }
+
+/* 
+
+Before doing anything else, setup the main layout properly.. of how i want this to work
+
+*/
